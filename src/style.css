@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
 ol,
 ul {
   list-style: none;
@@ -14,57 +14,106 @@ ul {
   box-sizing: border-box !important;
 }
 
+:root {
+  --font-family: 'Poppins', sans-serif;
+  --font-family-styled: 'Sacramento', cursive;
+  --Box-shadow-outside: -5px -5px 20px rgba(255, 255, 255, 0.849), 5px 5px 9px rgba(94, 104, 121, 0.3);
+  --Box-shadow-inside: inset -5px -5px 9px rgba(255, 255, 255, 0.647), inset 5px 5px 9px rgba(94, 104, 121, 0.3);
+}
+
 body {
-  background-color: #fceed0;
+  background-color: #dbeafa;
   font-family: "Roboto", sans-serif;
-  color: #5b5e61;
+  color: #5d6267;
   line-height: 1;
-  font-weight: 500;
 }
 
 .nav {
-  margin-top: 1.5rem;
-}
+    margin-top: 1.5rem;
+  }
+  
+  .nav-items {
+    display: flex;
+    justify-content:center;
+    align-items: center;
+  }
+  
+  .nav-items li {
+    margin-left: 5%;
+  }
+  
+  .logo {
+    border-radius: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: #000;
+  }
 
-.nav-items {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 80px;
-}
+  .logo-small {
+      font-size: 15px;
+      color: #588bae;
+      text-decoration: dotted;
+  }
+  
+  .logo-title {
+    font-size: 20px;
+  }
 
-.nav-items li {
-  cursor: pointer;
-}
+  .img-logo {
+      height: 50px;
+      width: 50px;
+  }
 
-.logo {
-  border-radius: 50%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  color: #000;
-}
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center; 
+    gap: 20px;
+    margin: 80px 200px;
+  }
+  
+  .card {
+    display: inline-block;
+    text-align: center;
+    box-shadow: var(--Box-shadow-outside);
+    background-color: #fbf0d7;
+    padding: 10px;
+    height: 250px;
+    width: 30%;
+    
+  }
 
-.logo-small {
-  font-size: 15px;
-  color: #588bae;
-  text-decoration: dotted;
-}
+  .image-api {
+    height: 100px;
+    width: 50%;
+  }
 
-.logo-title {
-  font-size: 20px;
-}
+  .likes {
+    margin-top: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: 1.5rem;
+  }
+  
+  .comment {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+  }
 
-.img-logo {
-  height: 50px;
-  width: 50px;
-}
-
-.list-items{
-  height: 840px;
-}
-
+  .button {
+    padding: 0.8rem;
+    border: none;
+    margin-top: 20px;
+    box-shadow: 5px 7px 5px rgba(0, 0, 0, 1);
+    background-color: rgb(241, 241, 247);
+  }
+  
 footer {
   line-height: 50px;
 }
