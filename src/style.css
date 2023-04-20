@@ -24,7 +24,7 @@ ul {
 body {
   background-color: #dbeafa;
   font-family: "Roboto", sans-serif;
-  color: #5b5e61;
+  color: #5d6267;
   line-height: 1;
 }
 
@@ -90,6 +90,11 @@ body {
     height: 100px;
     width: 50%;
   }
+
+  /* .fa-heart {
+    color: #fff;
+    border: 1px solid black;
+  } */
 
   .likes {
     margin-top: 0.5rem;

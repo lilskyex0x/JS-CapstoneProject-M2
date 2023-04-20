@@ -12,11 +12,11 @@ async function DisplayCards(data) {
           </div>
         </div>
         <div class="title-container">
-          <h3>${element.title} <i class="fa-solid fa-heart fa-lg"></i></h3>
-          <div class="interactions">       
+          <h3>${element.title} <i class="fa fa-heart"></i></h3>
+          <div class="interactions">
             <div class="likes">355 likes</div>
           </div>
-          <button class="button comment"><i class="fa-solid fa-comments"></i> Comments</button>
+          <button class="button comment"><i class="fa fa-comments"></i> Comments</button>
         </div>
       </div>
     `;
