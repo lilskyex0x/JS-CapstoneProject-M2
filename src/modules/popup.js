@@ -4,7 +4,7 @@ popupSection.classList.add("modal");
 popupSection.innerHTML = `
 <div class="popup-wrapper">
     <button class="close-btn">&times;</button>
-    <img src="./assets/artlogo.png" alt="">
+    <img class="popup-img" alt="">
     <h2>Artwork</h2>
     <div class="art-details">
         <ul>
@@ -32,11 +32,24 @@ document.body.appendChild(popupSection);
 
 export const modal = document.getElementById("popupModal");
 const overlay = document.getElementById("overlay");
+const cmdButtonClose = document.querySelectorAll(".close-btn");
 
-export function openModal(modal) {
+cmdButtonClose.forEach((button) => {
+  button.addEventListener("click", () => {
+    closeModal(modal);
+  });
+});
+
+export function openModal(modal, imgSrc, title) {
   if (modal === null) return;
   modal.classList.add("active");
   overlay.classList.add("active");
+
+  const img = modal.querySelector("img");
+  img.src = imgSrc;
+
+  const titleElement = modal.querySelector("h2");
+  titleElement.textContent = title;
 }
 
 export function closeModal(modal) {

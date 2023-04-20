@@ -1,6 +1,11 @@
 import "./style.css";
+import Api from "./modules/api.js";
 import { openModal, closeModal } from "./modules/popup";
 import { modal } from "./modules/popup";
+
+const callAPI = new Api();
+
+callAPI.GetArtworks();
 
 const cmdButtonOpen = document.querySelectorAll(".button");
 const cmdButtonClose = document.querySelectorAll(".close-btn");
@@ -16,3 +21,4 @@ cmdButtonClose.forEach((button) => {
     closeModal(modal);
   });
 });
+

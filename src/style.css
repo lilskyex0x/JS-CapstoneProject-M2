@@ -1,8 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+
 ol,
 ul {
   list-style: none;
 }
+
 *,
 *::before,
 *::after {
@@ -14,199 +16,226 @@ ul {
   box-sizing: border-box !important;
 }
 
+:root {
+  --font-family: 'Poppins', sans-serif;
+  --font-family-styled: 'Sacramento', cursive;
+  --Box-shadow-outside: -5px -5px 20px rgba(255, 255, 255, 0.849), 5px 5px 9px rgba(94, 104, 121, 0.3);
+  --Box-shadow-inside: inset -5px -5px 9px rgba(255, 255, 255, 0.647), inset 5px 5px 9px rgba(94, 104, 121, 0.3);
+}
+
 body {
-  background-color: #fceed0;
+  background-color: #dbeafa;
   font-family: "Roboto", sans-serif;
-  color: #5b5e61;
+  color: #5d6267;
   line-height: 1;
 }
 
 .nav {
-    margin-top: 1.5rem;
-  }
-  
-  .nav-items {
-    display: flex;
-    justify-content:center;
-    align-items: center;
-  }
-  
-  .nav-items li {
-    margin-left: 5%;
-  }
-  
-  .logo {
-    border-radius: 50%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    color: #000;
-  }
+  margin-top: 1.5rem;
+}
 
-  .logo-small {
-      font-size: 15px;
-      color: #588bae;
-      text-decoration: dotted;
-  }
-  
-  .logo-title {
-    font-size: 20px;
-  }
+.nav-items {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-  .img-logo {
-      height: 50px;
-      width: 50px;
-  }
+.nav-items li {
+  margin-left: 5%;
+}
 
-  .cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center; 
-    gap: 20px;
-    margin: 100px 200px;
-  }
-  
-  .card {
-    display: inline-block;
-    width: 240px;
-    border: 2px dotted red;
-    text-align: center;
-    
-  }
-  
-  .card-image img {
-    max-width: 90%;
-    max-height: 90%;
-  }
-  
-  .likes {
-    margin-top: 0.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-right: 1.5rem;
-  }
-  
-  .comment-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: auto;
-    /* padding-right: 1.5rem; */
-  }
+.logo {
+  border-radius: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: #000;
+}
 
-  .button {
-    padding: 0.8rem;
-    border: none;
-    /* box-shadow: 5px 7px 5px rgba(0, 0, 0, 1); */
-    background-color: rgb(100, 86, 86);
-    cursor: pointer;
-  }
+.logo-small {
+  font-size: 15px;
+  color: #588bae;
+  text-decoration: dotted;
+}
 
-  /* POPUP COMMENT Section */
-  #popupModal{
-    display: flex;
-    justify-content: center;
-    width: 100%;
-  }
+.logo-title {
+  font-size: 20px;
+}
 
-  .modal{
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(0);
-    transition: 200ms ease-in-out;
-  }
+.img-logo {
+  height: 50px;
+  width: 50px;
+}
 
-  .modal.active{
-    transform: translate(-50%, -50%) scale(0.85);
-  }
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin: 80px 200px;
+}
 
-  .popup-wrapper {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: white;
-    border: 2px solid black;
-    border-radius: 20px;
-    width: 800px;
-    max-width: 80%;
-    margin: 50px 0;
-    padding: 80px;
-    gap: 25px;
-    z-index: 10;
-  }
+.card {
+  display: inline-block;
+  text-align: center;
+  box-shadow: var(--Box-shadow-outside);
+  background-color: #fbf0d7;
+  padding: 10px;
+  height: 250px;
+  width: 30%;
 
-  .close-btn{
-    position: absolute;
-    top: 50px;
-    right: 60px;
-    font-size: 25px;
-    font-weight: bold;
-    padding: 5px 10px;
-    cursor: pointer;
-    border-radius: 8px;
-    border-color: aqua;
-  }
+}
 
-  .art-details ul{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-  }
+.image-api {
+  height: 100px;
+  width: 50%;
+}
 
-  .art-details ul li{
-    padding: 0.5rem;
-  }
+.popup-img {
+  height: 200px;
+  width: 50%;
+}
 
-  .cmds{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 25px;
-  }
+.likes {
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-right: 1.5rem;
+}
 
-  .cmds p{
-    align-self: flex-start;
-  }
+.comment {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
 
-  .form {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-  }
+.button {
+  padding: 0.8rem;
+  border: none;
+  background-color: rgb(100, 86, 86);
+  cursor: pointer;
+  margin-top: 20px;
+  box-shadow: 5px 7px 5px rgba(0, 0, 0, 1);
+  background-color: rgb(241, 241, 247);
+}
 
-  #name {
-    width: 80%;
-    padding: .5em .5em;
-  }
+/* POPUP COMMENT Section */
+#popupModal {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
 
-  #insights {
-    padding: .5em .5em 5em .5em;
-  }
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: 200ms ease-in-out;
+}
 
-  #cmd-btn{
-    width: 80%;
-  }
+.modal.active {
+  transform: translate(-50%, -50%) scale(0.85);
+}
 
-  #overlay{
-    position: fixed;
-    opacity: 0;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, .5);
-    transition: 200ms ease-in-out;
-    pointer-events: none;
-  }
+.popup-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 20px;
+  width: 800px;
+  max-width: 80%;
+  margin: 50px 0;
+  padding: 80px;
+  gap: 25px;
+  z-index: 10;
+}
 
-  #overlay.active {
-    opacity: 1;
-    pointer-events: all;
-  }
+.close-btn {
+  position: absolute;
+  top: 50px;
+  right: 60px;
+  font-size: 25px;
+  font-weight: bold;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 8px;
+  border-color: aqua;
+}
+
+.art-details ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.art-details ul li {
+  padding: 0.5rem;
+}
+
+.cmds {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+}
+
+.cmds p {
+  align-self: flex-start;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+#name {
+  width: 80%;
+  padding: .5em .5em;
+}
+
+#insights {
+  padding: .5em .5em 5em .5em;
+}
+
+#cmd-btn {
+  width: 80%;
+}
+
+#overlay {
+  position: fixed;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, .5);
+  transition: 200ms ease-in-out;
+  pointer-events: none;
+}
+
+#overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+
+footer {
+  line-height: 50px;
+}
+
+.bordered {
+  border: 3px solid black;
+  width: 100%;
+  padding: 0 30px;
+}
