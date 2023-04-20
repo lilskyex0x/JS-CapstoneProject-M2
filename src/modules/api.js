@@ -1,4 +1,4 @@
-import DisplayCards from "./functions.js";
+import DisplayCards from "./listCards.js";
 
 export default class Api {
   constructor() {
