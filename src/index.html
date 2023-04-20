@@ -12,7 +12,7 @@
         <nav class="nav">
             <ul class="nav-items">
                 <li class="logo">
-                    <img class="img-logo" src="../assets/artlogo.png" alt="artlogo">
+                    <img class="img-logo" src="./assets/artlogo.png" alt="artlogo">
                     <h1 class="logo-title">LIL <span class="logo-small">Mercy</span></h1>
                 </li>
                 <li class="nav-link">Artworks(<b class="product-counter">1</b>)</li>
@@ -21,11 +21,21 @@
             </ul>
         </nav>
     </header>
-    <main id="blur">
+    <main>
         <div class="cards">
             <div class="card">
                 <div class="card-image">
-                    <img src="../assets/artlogo.png" alt="">
+                    <img src="./assets/artlogo.png" alt="">
+                    <h2>Artworks <i class="fa fa-heart-o" aria-hidden="true"></i></h2>
+                    <p class="likes">19 Likes</p>
+                    <div class="comment-button">
+                        <button class="button" type="button">Comments</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image">
+                    <img src="./assets/artlogo.png" alt="">
                     <h2>Artworks <i class="fa fa-heart-o" aria-hidden="true"></i></h2>
                     <p class="likes">10 Likes</p>
                     <div class="comment-button">
@@ -35,7 +45,7 @@
             </div>
             <div class="card">
                 <div class="card-image">
-                    <img src="../assets/artlogo.png" alt="">
+                    <img src="./assets/artlogo.png" alt="">
                     <h2>Artworks <i class="fa fa-heart-o" aria-hidden="true"></i></h2>
                     <p class="likes">10 Likes</p>
                     <div class="comment-button">
@@ -45,7 +55,7 @@
             </div>
             <div class="card">
                 <div class="card-image">
-                    <img src="../assets/artlogo.png" alt="">
+                    <img src="./assets/artlogo.png" alt="">
                     <h2>Artworks <i class="fa fa-heart-o" aria-hidden="true"></i></h2>
                     <p class="likes">10 Likes</p>
                     <div class="comment-button">
@@ -55,7 +65,7 @@
             </div>
             <div class="card">
                 <div class="card-image">
-                    <img src="../assets/artlogo.png" alt="">
+                    <img src="./assets/artlogo.png" alt="">
                     <h2>Artworks <i class="fa fa-heart-o" aria-hidden="true"></i></h2>
                     <p class="likes">10 Likes</p>
                     <div class="comment-button">
@@ -65,17 +75,7 @@
             </div>
             <div class="card">
                 <div class="card-image">
-                    <img src="../assets/artlogo.png" alt="">
-                    <h2>Artworks <i class="fa fa-heart-o" aria-hidden="true"></i></h2>
-                    <p class="likes">10 Likes</p>
-                    <div class="comment-button">
-                        <button class="button" type="button">Comments</button>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-image">
-                    <img src="../assets/artlogo.png" alt="">
+                    <img src="./assets/artlogo.png" alt="">
                     <h2>Artworks <i class="fa fa-heart-o" aria-hidden="true"></i></h2>
                     <p class="likes">10 Likes</p>
                     <div class="comment">
@@ -86,10 +86,10 @@
         </div>
     </main>
 
-    <section id="popupmodal" class="modal">
+    <section id="popupModal" class="modal">
         <div class="popup-wrapper">
             <button class="close-btn">&times;</button>
-            <img src="../assets/artlogo.png" alt="">
+            <img src="./assets/artlogo.png" alt="">
             <h2>Artwork</h2>
             <div class="art-details">
                 <ul>
@@ -112,6 +112,7 @@
                 </form>
             </div>
         </div>
+        <div id="overlay"></div>
     </section>
 </body> 
 </html>
