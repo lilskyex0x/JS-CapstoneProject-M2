@@ -106,7 +106,7 @@ body {
   }
 
   /* POPUP COMMENT Section */
-  #popupmodel{
+  #popupmodal{
     display: flex;
     justify-content: center;
   }

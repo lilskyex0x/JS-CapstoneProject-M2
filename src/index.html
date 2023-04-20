@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/a11f8b435e.js" crossorigin="anonymous" ></script>
+    <script defer src="https://kit.fontawesome.com/a11f8b435e.js" crossorigin="anonymous" ></script>
     <title>JavaScript Capstone project</title>
 </head>
 <body>
@@ -21,7 +21,7 @@
             </ul>
         </nav>
     </header>
-    <main>
+    <main id="blur">
         <div class="cards">
             <div class="card">
                 <div class="card-image">
@@ -86,8 +86,9 @@
         </div>
     </main>
 
-    <section id="popupmodel">
+    <section id="popupmodal" class="modal">
         <div class="popup-wrapper">
+            <button class="close-btn">&times;</button>
             <img src="../assets/artlogo.png" alt="">
             <h2>Artwork</h2>
             <div class="art-details">

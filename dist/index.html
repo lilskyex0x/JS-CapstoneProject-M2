@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/a11f8b435e.js" crossorigin="anonymous" ></script>
+    <script defer src="https://kit.fontawesome.com/a11f8b435e.js" crossorigin="anonymous" ></script>
     <title>JavaScript Capstone project</title>
 <script defer src="runtime.bundle.js"></script><script defer src="index.bundle.js"></script></head>
 <body>
@@ -12,7 +12,7 @@
         <nav class="nav">
             <ul class="nav-items">
                 <li class="logo">
-                    <img src="/dist/assets/artlogo.png" alt="artlogo">
+                    <img class="img-logo" src="../assets/artlogo.png" alt="artlogo">
                     <h1 class="logo-title">LIL <span class="logo-small">Mercy</span></h1>
                 </li>
                 <li class="nav-link">Artworks(<b class="product-counter">1</b>)</li>
@@ -21,5 +21,96 @@
             </ul>
         </nav>
     </header>
-</body>
+    <main id="blur">
+        <div class="cards">
+            <div class="card">
+                <div class="card-image">
+                    <img src="../assets/artlogo.png" alt="">
+                    <h2>Artworks <i class="fa fa-heart-o" aria-hidden="true"></i></h2>
+                    <p class="likes">10 Likes</p>
+                    <div class="comment-button">
+                        <button class="button" type="button" onclick="toggle()">Comments</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image">
+                    <img src="../assets/artlogo.png" alt="">
+                    <h2>Artworks <i class="fa fa-heart-o" aria-hidden="true"></i></h2>
+                    <p class="likes">10 Likes</p>
+                    <div class="comment-button">
+                        <button class="button" type="button">Comments</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image">
+                    <img src="../assets/artlogo.png" alt="">
+                    <h2>Artworks <i class="fa fa-heart-o" aria-hidden="true"></i></h2>
+                    <p class="likes">10 Likes</p>
+                    <div class="comment-button">
+                        <button class="button" type="button">Comments</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image">
+                    <img src="../assets/artlogo.png" alt="">
+                    <h2>Artworks <i class="fa fa-heart-o" aria-hidden="true"></i></h2>
+                    <p class="likes">10 Likes</p>
+                    <div class="comment-button">
+                        <button class="button" type="button">Comments</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image">
+                    <img src="../assets/artlogo.png" alt="">
+                    <h2>Artworks <i class="fa fa-heart-o" aria-hidden="true"></i></h2>
+                    <p class="likes">10 Likes</p>
+                    <div class="comment-button">
+                        <button class="button" type="button">Comments</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image">
+                    <img src="../assets/artlogo.png" alt="">
+                    <h2>Artworks <i class="fa fa-heart-o" aria-hidden="true"></i></h2>
+                    <p class="likes">10 Likes</p>
+                    <div class="comment">
+                        <button class="button" type="button">Comments</button>
+                    </div>
+                </div>
+            </div>   
+        </div>
+    </main>
+
+    <section id="popupmodel">
+        <div class="popup-wrapper">
+            <img src="../assets/artlogo.png" alt="">
+            <h2>Artwork</h2>
+            <div class="art-details">
+                <ul>
+                    <li>Fuel: titanium</li>
+                    <li>Weight: 400</li>
+                    <li>Length: 100,000</li>
+                    <li>Power: 100,000,000</li> 
+                </ul>
+            </div>
+            <div class="cmds">
+                <h3>Comments (3)</h3>
+                <p>Skye: I love it</p>
+                <p>Meave: I would buy that one, its AWESOME</p>
+            </div>
+            <div class="cmd-form">
+                <form action="#" class="form">
+                    <input type="text" name="name" id="name" placeholder="Your Name">
+                    <input type="text" name="insight" id="insights" placeholder="Your insights">
+                    <input type="button" value="Comment" id="cmd-btn">
+                </form>
+            </div>
+        </div>
+    </section>
+</body> 
 </html>
