@@ -1,3 +1,6 @@
+import { openModal } from "./popup.js";
+import { modal } from "./popup.js";
+
 const Cards = document.querySelector(".cards");
 
 async function DisplayCards(data) {
@@ -20,6 +23,15 @@ async function DisplayCards(data) {
         </div>
       </div>
     `;
+  });
+
+  const commentButtons = document.querySelectorAll(".comment");
+  commentButtons.forEach((button, index) => {
+    button.addEventListener("click", () => {
+      const imgSrc = `./assets/image/${index}.jpg`;
+      const title = data[index].title;
+      openModal(modal, imgSrc, title);
+    });
   });
 }
 

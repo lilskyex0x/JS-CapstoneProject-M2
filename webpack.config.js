@@ -16,7 +16,7 @@ module.exports = {
       template: "./src/index.html",
     }),
     new CopyWebpackPlugin({
-      patterns: [{from: "src/assets/image", to: "assets/image"}],
+      patterns: [{ from: "src/assets/image", to: "assets/image" }],
     }),
   ],
   output: {
