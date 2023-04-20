@@ -106,21 +106,51 @@ body {
   }
 
   /* POPUP COMMENT Section */
-  #popupmodal{
+  #popupModal{
     display: flex;
     justify-content: center;
+    width: 100%;
+  }
+
+  .modal{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+  }
+
+  .modal.active{
+    transform: translate(-50%, -50%) scale(0.85);
   }
 
   .popup-wrapper {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: white;
     border: 2px solid black;
-    width: 50%;
-    padding: 50px;
+    border-radius: 20px;
+    width: 800px;
+    max-width: 80%;
+    margin: 50px 0;
+    padding: 80px;
     gap: 25px;
+    z-index: 10;
+  }
+
+  .close-btn{
+    position: absolute;
+    top: 50px;
+    right: 60px;
+    font-size: 25px;
+    font-weight: bold;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 8px;
+    border-color: aqua;
   }
 
   .art-details ul{
@@ -162,4 +192,21 @@ body {
 
   #cmd-btn{
     width: 80%;
+  }
+
+  #overlay{
+    position: fixed;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .5);
+    transition: 200ms ease-in-out;
+    pointer-events: none;
+  }
+
+  #overlay.active {
+    opacity: 1;
+    pointer-events: all;
   }
