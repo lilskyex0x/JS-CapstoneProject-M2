@@ -16,14 +16,6 @@ async function DisplayCards(data) {
           <div class="interactions">       
             <div class="likes">355 likes</div>
           </div>
-          <div>
-            ${
-              element.publication_history &&
-              typeof element.publication_history === "string"
-                ? element.publication_history.substr(0, 50) + "..."
-                : ""
-            }
-          </div>
           <button class="button comment"><i class="fa-solid fa-comments"></i> Comments</button>
         </div>
       </div>
