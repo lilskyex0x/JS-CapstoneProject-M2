@@ -73,14 +73,13 @@ body {
     width: 240px;
     border: 2px dotted red;
     text-align: center;
-    
   }
-  
-  .card-image img {
-    max-width: 90%;
-    max-height: 90%;
+
+  .image-api {
+    height: 100px;
+    width: 100px;
   }
-  
+
   .likes {
     margin-top: 0.5rem;
     display: flex;
