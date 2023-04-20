@@ -91,11 +91,6 @@ body {
     width: 50%;
   }
 
-  /* .fa-heart {
-    color: #fff;
-    border: 1px solid black;
-  } */
-
   .likes {
     margin-top: 0.5rem;
     display: flex;
@@ -109,7 +104,6 @@ body {
     align-items: center;
     justify-content: center;
     margin: auto;
-    /* padding-right: 1.5rem; */
   }
 
   .button {
