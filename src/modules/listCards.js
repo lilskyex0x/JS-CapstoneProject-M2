@@ -1,9 +1,8 @@
 import { openModal } from "./popup.js";
 import { modal } from "./popup.js";
 
-const Cards = document.querySelector(".cards");
-
 async function DisplayCards(data) {
+  const Cards = document.querySelector(".cards");
   data.forEach((element, index) => {
     Cards.innerHTML += `
       <div class="card">
@@ -30,7 +29,7 @@ async function DisplayCards(data) {
     button.addEventListener("click", () => {
       const imgSrc = `./assets/image/${index}.jpg`;
       const title = data[index].title;
-      openModal(modal, imgSrc, title);
+      openModal(modal, imgSrc, title, index);
     });
   });
 }
