@@ -1,3 +1,6 @@
+import displayComments from "./displayCmds";
+import addComment from "./addCmd";
+
 const popupSection = document.createElement("section");
 popupSection.setAttribute("id", "popupModal");
 popupSection.classList.add("modal");
@@ -15,9 +18,8 @@ popupSection.innerHTML = `
         </ul>
     </div>
     <div class="cmds">
-        <h3>Comments (3)</h3>
-        <p>Skye: I love it</p>
-        <p>Meave: I would buy that one, its AWESOME</p>
+      <h3 id="c-count">Comments(<span id="c-total"></span>)</h3>
+      <ul id="all-comments"></ul>
     </div>
     <div class="cmd-form">
         <form action="#" class="form">
@@ -40,7 +42,7 @@ cmdButtonClose.forEach((button) => {
   });
 });
 
-export function openModal(modal, imgSrc, title) {
+export function openModal(modal, imgSrc, title, itemId) {
   if (modal === null) return;
   modal.classList.add("active");
   overlay.classList.add("active");
@@ -50,7 +52,27 @@ export function openModal(modal, imgSrc, title) {
 
   const titleElement = modal.querySelector("h2");
   titleElement.textContent = title;
+
+  const commentBtn = modal.querySelector("#cmd-btn");
+  commentBtn.addEventListener("click", async (event) => {
+    event.preventDefault();
+
+    const nameInput = modal.querySelector("#name");
+    const insightsInput = modal.querySelector("#insights");
+    const name = nameInput.value;
+    const insights = insightsInput.value;
+
+    await addComment(itemId, name, insights);
+
+    // clear the input field;
+    nameInput.value = "";
+    insightsInput.value = "";
+  });
+  // update the comments display
+  displayComments(itemId);
 }
+
+closeModal(modal);
 
 export function closeModal(modal) {
   if (modal === null) return;
