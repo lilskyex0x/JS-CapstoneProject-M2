@@ -8,15 +8,20 @@ export default class Api {
     this.appId = "rZVQvLjlhB3dnDtkMDhH";
   }
 
-  async fetchLikes(id) {
-    const response = await fetch(
-      `${this.baseUrl}/${this.appId}/likes?item_id=${id}`
-    );
-    const data = await response.json();
-    return data.length;
+  async fetchLikes() {
+    try {
+      const response = await fetch(`${this.baseUrl}/${this.appId}/likes`);
+      if (response.ok) {
+        const data = response.json();
+        return data;
+      }
+      return [];
+    } catch (err) {
+      return err;
+    }
   }
 
-  GetArtworks = async () => {
+  async GetArtworks() {
     const response = await fetch(`${this.artworksList}`);
     const json = await response.json();
     const artworks = json.data;
@@ -33,5 +38,15 @@ export default class Api {
 
     const data = await Promise.all(promises);
     DisplayCards(data);
-  };
+  }
+
+  async addLikes(likes) {
+    await fetch(`${this.baseUrl}/${this.appId}/likes`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(likes),
+    });
+  }
 }
