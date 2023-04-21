@@ -1,13 +1,22 @@
 import Api from "./api.js";
 import { openModal, modal } from "./popup.js";
 
-const BASE_URL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps';
-const APP_ID = 'YFp5ZW4GUfRkFnkzxrx4';
+const BASE_URL =
+  "https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps";
+const APP_ID = "rZVQvLjlhB3dnDtkMDhH";
 
 async function getLikes(id) {
-  const response = await fetch(`${BASE_URL}/${APP_ID}/likes/${id}`);
-  const data = await response.json();
-  return data.likes;
+  try {
+    const response = await fetch(`${BASE_URL}/${APP_ID}/likes`);
+    if (!response.ok) {
+      throw new Error("Network response was not ok");
+    }
+    const data = await response.json();
+    return data.likes;
+  } catch (error) {
+    console.error("Error fetching likes:", error);
+    return 0; // Return 0 likes if an error occurs
+  }
 }
 
 async function DisplayCards(data) {

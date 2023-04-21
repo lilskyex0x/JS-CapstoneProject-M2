@@ -1,5 +1,6 @@
-const BASE_URL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps';
-const APP_ID = 'YFp5ZW4GUfRkFnkzxrx4';
+const BASE_URL =
+  "https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps";
+const APP_ID = "rZVQvLjlhB3dnDtkMDhH";
 const fetchLikes = async () => {
   try {
     const response = await fetch(`${BASE_URL}/${APP_ID}/likes`);

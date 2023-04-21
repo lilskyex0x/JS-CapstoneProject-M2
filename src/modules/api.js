@@ -2,12 +2,16 @@ import DisplayCards from "./listCards.js";
 
 export default class Api {
   constructor() {
-    this.artworksList = 'https://api.artic.edu/api/v1/artworks?page=2';
-    this.likesUrl = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/YFp5ZW4GUfRkFnkzxrx4/';
+    this.artworksList = "https://api.artic.edu/api/v1/artworks?page=2";
+    this.baseUrl =
+      "https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps";
+    this.appId = "rZVQvLjlhB3dnDtkMDhH";
   }
 
   async fetchLikes(id) {
-    const response = await fetch(`${this.likesUrl}/${id}/likes`);
+    const response = await fetch(
+      `${this.baseUrl}/${this.appId}/likes?item_id=${id}`
+    );
     const data = await response.json();
     return data.length;
   }
@@ -26,8 +30,8 @@ export default class Api {
         imgIndex: index,
       };
     });
-    
+
     const data = await Promise.all(promises);
     DisplayCards(data);
-  }
+  };
 }
