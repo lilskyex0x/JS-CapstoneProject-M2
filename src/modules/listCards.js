@@ -1,4 +1,5 @@
 import { openModal, modal } from "./popup.js";
+import countProducts from './countItems.js';
 
 async function DisplayCards(data) {
   const Cards = document.querySelector(".cards");
@@ -25,8 +26,8 @@ async function DisplayCards(data) {
     `;
   });
 
-  const artworkCount = document.querySelector(".product-counter");
-  artworkCount.innerHTML = `(${data.length})`;
+  const countItems = document.querySelector('.product-counter');
+  countItems.innerHTML = `(${countProducts()})`;
 
   const commentButtons = document.querySelectorAll(".comment");
   commentButtons.forEach((button, index) => {
