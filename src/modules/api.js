@@ -1,52 +1,36 @@
 import DisplayCards from "./listCards.js";
+const APP_ID = "rZVQvLjlhB3dnDtkMDhH";
 
 export default class Api {
   constructor() {
-    this.artworksList = "https://api.artic.edu/api/v1/artworks?page=2";
-    this.baseUrl =
-      "https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps";
-    this.appId = "rZVQvLjlhB3dnDtkMDhH";
+    this.artworksList = 'https://api.artic.edu/api/v1/artworks?page=2';
   }
 
-  async fetchLikes() {
-    try {
-      const response = await fetch(`${this.baseUrl}/${this.appId}/likes`);
-      if (response.ok) {
-        const data = response.json();
-        return data;
-      }
-      return [];
-    } catch (err) {
-      return err;
+  GetArtworks = async () => {
+    let artworks = [];
+    const cachedData = localStorage.getItem('artworks');
+    if (cachedData) {
+      artworks = JSON.parse(cachedData);
+    } else {
+      const response = await fetch(`${this.artworksList}`);
+      const json = await response.json();
+      artworks = json.data;
+      localStorage.setItem('artworks', JSON.stringify(artworks));
     }
-  }
-
-  async GetArtworks() {
-    const response = await fetch(`${this.artworksList}`);
-    const json = await response.json();
-    const artworks = json.data;
-
-    const promises = artworks.map(async (artwork, index) => {
-      const likes = await this.fetchLikes(artwork.id);
-      return {
-        id: artwork.id,
-        title: artwork.title,
-        likes: likes,
-        imgIndex: index,
-      };
+  
+    const likeRequests = artworks.map((artwork) => {
+      const artworkId = artwork.id.toString();
+      return fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${APP_ID}/likes`)
+        .then((response) => response.json())
+        .then((json) => ({ artworkId, likes: json.likes }));
     });
-
-    const data = await Promise.all(promises);
-    DisplayCards(data);
-  }
-
-  async addLikes(likes) {
-    await fetch(`${this.baseUrl}/${this.appId}/likes`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(likes),
+  
+    const likes = await Promise.all(likeRequests);
+    likes.forEach((like) => {
+      const artwork = artworks.find((artwork) => artwork.id.toString() === like.artworkId);
+      artwork.likes = like.likes;
     });
+  
+    DisplayCards(artworks);
   }
 }

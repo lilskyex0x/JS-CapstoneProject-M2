@@ -1,4 +1,4 @@
-import Api from "./api.js";
+
 import { openModal, modal } from "./popup.js";
 
 async function DisplayCards(data) {
@@ -25,9 +25,10 @@ async function DisplayCards(data) {
           </div>
         </div>
         <div class="title-container">
-          <h3>${element.title} <i class="fa fa-heart"></i></h3>
+          <h3>${element.title}</h3>
           <div class="interactions">
-            <div class="likes">${likes[id] || 0} likes</div>
+          <i class="fa fa-heart like-btn"></i>
+            <div class="likes likes-counter">${element.id} Likes</div>
           </div>
           <button class="button comment"><i class="fa fa-comments"></i> Comments</button>
         </div>
@@ -43,6 +44,31 @@ async function DisplayCards(data) {
       openModal(modal, imgSrc, title, index);
     });
   });
+
+  const likeButtons = document.querySelectorAll('.like-btn');
+
+likeButtons.forEach((button) => {
+  button.addEventListener('click', async () => {
+    const itemId = button.dataset.itemId;
+    const response = await fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/rZVQvLjlhB3dnDtkMDhH/likes`, {
+      method: 'POST',
+      body: JSON.stringify({ item_id: itemId, route: window.location.href }),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+
+    if (response.ok) {
+      // Update the likes count on the screen
+      const likesCountEl = button.querySelector('.likes-count');
+      const currentLikesCount = parseInt(likesCountEl.textContent);
+      likesCountEl.textContent = currentLikesCount + 1;
+    } else {
+      console.log('Error recording like');
+    }
+  });
+});
+
 }
 
 const BASE_URL =
