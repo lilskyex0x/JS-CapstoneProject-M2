@@ -1,11 +1,12 @@
-const BASE_URL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps';
-const APP_ID = 'YFp5ZW4GUfRkFnkzxrx4';
+const BASE_URL =
+  "https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps";
+const APP_ID = "rZVQvLjlhB3dnDtkMDhH";
 
 const addLikes = async (like) => {
   await fetch(`${BASE_URL}/${APP_ID}/likes`, {
-    method: 'POST',
+    method: "POST",
     headers: {
-      'Content-Type': 'application/json',
+      "Content-Type": "application/json",
     },
     body: JSON.stringify(like),
   });
