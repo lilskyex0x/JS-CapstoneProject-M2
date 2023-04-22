@@ -1,6 +1,7 @@
-import "./style.css";
-import FetchCards from "./modules/listCards.js";
-import postComment from "./modules/postCmds";
+import './style.css';
+import FetchCards from './modules/listCards.js';
+import postComment from './modules/postCmds.js';
+
 postComment();
 
 const callAPI = new FetchCards();

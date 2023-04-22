@@ -85,7 +85,6 @@ body {
   padding: 10px;
   height: 250px;
   width: 30%;
-
 }
 
 .image-api {
@@ -120,7 +119,6 @@ body {
 .button {
   padding: 0.8rem;
   border: none;
-  background-color: rgb(100, 86, 86);
   cursor: pointer;
   margin-top: 20px;
   box-shadow: 5px 7px 5px rgba(0, 0, 0, 1);
@@ -205,11 +203,11 @@ body {
 
 #name {
   width: 80%;
-  padding: .5em .5em;
+  padding: 0.5em 0.5em;
 }
 
 #insights {
-  padding: .5em .5em 5em .5em;
+  padding: 0.5em 0.5em 5em 0.5em;
 }
 
 #cmd-btn {
@@ -223,7 +221,7 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, .5);
+  background-color: rgba(0, 0, 0, 0.5);
   transition: 200ms ease-in-out;
   pointer-events: none;
 }
@@ -232,7 +230,6 @@ body {
   opacity: 1;
   pointer-events: all;
 }
-
 
 footer {
   line-height: 50px;
