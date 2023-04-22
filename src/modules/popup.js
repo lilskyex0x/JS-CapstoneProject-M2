@@ -11,10 +11,10 @@ popupSection.innerHTML = `
     <h2>Artwork</h2>
     <div class="art-details">
         <ul>
-            <li>Fuel: titanium</li>
-            <li>Weight: 400</li>
-            <li>Length: 100,000</li>
-            <li>Power: 100,000,000</li> 
+            <li>Paint: Water Paint</li>
+            <li>sizes: 18 x 24 inches</li>
+            <li>Made: German</li>
+            <li>Sale at: 999999$</li> 
         </ul>
     </div>
     <div class="cmds">

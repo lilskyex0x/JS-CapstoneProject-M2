@@ -1,4 +1,4 @@
-import countProducts from "../modules/countItems.js";
+import countProducts from '../modules/countItems.js';
 
 describe('countProducts function', () => {
   beforeEach(() => {
