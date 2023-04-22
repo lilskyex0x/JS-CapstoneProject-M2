@@ -6,10 +6,19 @@ export default class Api {
   }
 
   GetArtworks = async () => {
+    let artworks = [];
+    const cachedData = localStorage.getItem('artworks');
+    if (cachedData) {
+      artworks = JSON.parse(cachedData);
+      DisplayCards(artworks);
+      return;
+    }
+
     await fetch(`${this.artworksList}`)
       .then((response) => response.json())
       .then((json) => {
-        const artworks = json.data;
+        artworks = json.data;
+        localStorage.setItem('artworks', JSON.stringify(artworks));
         DisplayCards(artworks);
       });
   }

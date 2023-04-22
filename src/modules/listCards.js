@@ -1,28 +1,33 @@
-import { openModal } from "./popup.js";
-import { modal } from "./popup.js";
+import { openModal, modal } from "./popup.js";
+import countProducts from './countItems.js';
 
 async function DisplayCards(data) {
   const Cards = document.querySelector(".cards");
+
   data.forEach((element, index) => {
     Cards.innerHTML += `
       <div class="card">
         <div class="img-container">
           <div class="img-hold">
             <div class="img">
-              <img class = "image-api" src="./assets/image/${index}.jpg">
+              <img class="image-api" src="./assets/image/${index}.jpg">
             </div>
           </div>
         </div>
         <div class="title-container">
-          <h3>${element.title} <i class="fa fa-heart"></i></h3>
+          <h3>${element.title}</h3>
           <div class="interactions">
-            <div class="likes">355 likes</div>
+          <i class="fa fa-heart like-btn"></i>
+            <div class="likes likes-counter">0 Likes</div>
           </div>
           <button class="button comment"><i class="fa fa-comments"></i> Comments</button>
         </div>
       </div>
     `;
   });
+
+  const countItems = document.querySelector('.product-counter');
+  countItems.innerHTML = `(${countProducts()})`;
 
   const commentButtons = document.querySelectorAll(".comment");
   commentButtons.forEach((button, index) => {

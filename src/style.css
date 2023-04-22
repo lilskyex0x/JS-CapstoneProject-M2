@@ -98,6 +98,10 @@ body {
   width: 50%;
 }
 
+.product-counter {
+  color: #7632fe;
+}
+
 .likes {
   margin-top: 0.5rem;
   display: flex;
@@ -238,4 +242,9 @@ footer {
   border: 3px solid black;
   width: 100%;
   padding: 0 30px;
+}
+
+.like-btn .liked {
+  color: red;
+  cursor: pointer;
 }
