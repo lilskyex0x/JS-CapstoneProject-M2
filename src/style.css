@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
 
 ol,
 ul {
@@ -24,24 +24,29 @@ ul {
 }
 
 body {
-  background-color: #dbeafa;
+  background-color: #A7727D;
   font-family: "Roboto", sans-serif;
   color: #5d6267;
   line-height: 1;
 }
 
+/* ----------------------------------navbar CSS starts here------------------------------- */
+
 .nav {
-  margin-top: 1.5rem;
+  height: 100px;
+  background-color: #F9F5E7;
+  box-shadow: var(--Box-shadow-outside);
+  display: flex;
+  justify-content: center;
+  text-align: center;
 }
 
 .nav-items {
+  width: 80%;
+  min-width: 20%;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-}
-
-.nav-items li {
-  margin-left: 5%;
 }
 
 .logo {
@@ -51,11 +56,13 @@ body {
   justify-content: center;
   align-items: center;
   color: #000;
+  gap: 5px;
+  cursor: pointer;
 }
 
 .logo-small {
-  font-size: 15px;
-  color: #588bae;
+  font-size: 18px;
+  color: #A7727D;
   text-decoration: dotted;
 }
 
@@ -67,6 +74,14 @@ body {
   height: 50px;
   width: 50px;
 }
+
+.nav-link {
+  font-weight: 400;
+  font-size: 17px;
+  cursor: pointer;
+}
+
+/* -------------------------------NavBar CSS Section Ends Here------------------------------ */
 
 .cards {
   display: flex;
