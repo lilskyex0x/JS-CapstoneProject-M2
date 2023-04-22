@@ -59,8 +59,21 @@ async function DisplayCards(data) {
       const likeCounter = button.nextElementSibling;
       likeCounter.textContent = `${data[index].likes} Likes`;
       button.classList.toggle("liked");
-        const response = await postLikes(data[index].id, data[index].likes);
+    
+      // Store the number of likes in local storage
+      localStorage.setItem(`likes_${data[index].id}`, data[index].likes);
+    
+      // Update the number of likes in the API
+      const response = await postLikes(data[index].id, data[index].likes);
     });
+
+    // Retrieve the number of likes from local storage on page load
+    const savedLikes = localStorage.getItem(`likes_${data[index].id}`);
+    if (savedLikes) {
+      data[index].likes = parseInt(savedLikes);
+      const likeCounter = button.nextElementSibling;
+      likeCounter.textContent = `${data[index].likes} Likes`;
+    }
   });
 
   const countItems = document.querySelector(".product-counter");
