@@ -1,7 +1,6 @@
 import { openModal, modal } from "./popup.js";
 import countProducts from "./countItems.js";
-import postLikes from "./postLikes.js";
-import fetchLikes from "./fetchLikes.js";
+import postLikes from "./fetchLikes.js";
 
 export default class FetchCards {
   constructor() {
@@ -61,7 +60,6 @@ async function DisplayCards(data) {
       likeCounter.textContent = `${data[index].likes} Likes`;
       button.classList.toggle("liked");
         const response = await postLikes(data[index].id, data[index].likes);
-        console.log(response)
     });
   });
 
