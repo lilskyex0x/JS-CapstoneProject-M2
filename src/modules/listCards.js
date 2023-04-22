@@ -1,6 +1,6 @@
 import { openModal, modal } from "./popup.js";
 import countProducts from "./countItems.js";
-import postLikes from "./fetchLikes.js";
+import postLikes from "./postLikes.js";
 
 export default class FetchCards {
   constructor() {
