@@ -1,9 +1,9 @@
 import "./style.css";
-import Api from "./modules/api.js";
+import FetchCards from "./modules/listCards.js";
 import postComment from "./modules/postCmds";
 postComment();
 
-const callAPI = new Api();
+const callAPI = new FetchCards();
 
 async function initialize() {
   await callAPI.GetArtworks();
