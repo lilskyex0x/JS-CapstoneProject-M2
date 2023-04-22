@@ -1,9 +1,9 @@
-import displayComments from "./displayCmds";
-import addComment from "./addCmd";
+import displayComments from './displayCmds.js';
+import addComment from './addCmd.js';
 
-const popupSection = document.createElement("section");
-popupSection.setAttribute("id", "popupModal");
-popupSection.classList.add("modal");
+const popupSection = document.createElement('section');
+popupSection.setAttribute('id', 'popupModal');
+popupSection.classList.add('modal');
 popupSection.innerHTML = `
 <div class="popup-wrapper">
     <button class="close-btn">&times;</button>
@@ -32,50 +32,50 @@ popupSection.innerHTML = `
 <div id="overlay"></div>`;
 document.body.appendChild(popupSection);
 
-export const modal = document.getElementById("popupModal");
-const overlay = document.getElementById("overlay");
-const cmdButtonClose = document.querySelectorAll(".close-btn");
-
-cmdButtonClose.forEach((button) => {
-  button.addEventListener("click", () => {
-    closeModal(modal);
-  });
-});
+export const modal = document.getElementById('popupModal');
+const overlay = document.getElementById('overlay');
+const cmdButtonClose = document.querySelectorAll('.close-btn');
 
 export function openModal(modal, imgSrc, title, itemId) {
   if (modal === null) return;
-  modal.classList.add("active");
-  overlay.classList.add("active");
+  modal.classList.add('active');
+  overlay.classList.add('active');
 
-  const img = modal.querySelector("img");
+  const img = modal.querySelector('img');
   img.src = imgSrc;
 
-  const titleElement = modal.querySelector("h2");
+  const titleElement = modal.querySelector('h2');
   titleElement.textContent = title;
 
-  const commentBtn = modal.querySelector("#cmd-btn");
-  commentBtn.addEventListener("click", async (event) => {
+  const commentBtn = modal.querySelector('#cmd-btn');
+  commentBtn.addEventListener('click', async (event) => {
     event.preventDefault();
 
-    const nameInput = modal.querySelector("#name");
-    const insightsInput = modal.querySelector("#insights");
+    const nameInput = modal.querySelector('#name');
+    const insightsInput = modal.querySelector('#insights');
     const name = nameInput.value;
     const insights = insightsInput.value;
 
     await addComment(itemId, name, insights);
 
     // clear the input field;
-    nameInput.value = "";
-    insightsInput.value = "";
+    nameInput.value = '';
+    insightsInput.value = '';
   });
   // update the comments display
   displayComments(itemId);
 }
 
-closeModal(modal);
-
 export function closeModal(modal) {
   if (modal === null) return;
-  modal.classList.remove("active");
-  overlay.classList.remove("active");
+  modal.classList.remove('active');
+  overlay.classList.remove('active');
 }
+
+cmdButtonClose.forEach((button) => {
+  button.addEventListener('click', () => {
+    closeModal(modal);
+  });
+});
+
+closeModal(modal);
