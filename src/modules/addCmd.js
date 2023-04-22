@@ -1,8 +1,7 @@
-import postComment from "./postCmds.js";
-import displayComments from "./displayCmds.js";
+import postComment from './postCmds.js';
+import displayComments from './displayCmds.js';
 
 const addComment = async (itemId, username, comment) => {
-  console.log(itemId);
   const newComment = {
     item_id: itemId,
     username,

@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
 
 ol,
 ul {
@@ -20,28 +20,34 @@ ul {
   --font-family: 'Poppins', sans-serif;
   --font-family-styled: 'Sacramento', cursive;
   --Box-shadow-outside: -5px -5px 20px rgba(255, 255, 255, 0.849), 5px 5px 9px rgba(94, 104, 121, 0.3);
+  --Box-shadow-outside-dark: -5px -5px 20px rgba(73, 36, 36, 0.849), 5px 5px 9px rgba(250, 250, 250, 0.39);
   --Box-shadow-inside: inset -5px -5px 9px rgba(255, 255, 255, 0.647), inset 5px 5px 9px rgba(94, 104, 121, 0.3);
 }
 
 body {
-  background-color: #dbeafa;
+  background-color: #a7727d;
   font-family: "Roboto", sans-serif;
   color: #5d6267;
   line-height: 1;
 }
 
+/* ----------------------------------navbar CSS starts here------------------------------- */
+
 .nav {
-  margin-top: 1.5rem;
+  height: 100px;
+  background-color: #f9f5e7;
+  box-shadow: var(--Box-shadow-outside);
+  display: flex;
+  justify-content: center;
+  text-align: center;
 }
 
 .nav-items {
+  width: 80%;
+  min-width: 20%;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-}
-
-.nav-items li {
-  margin-left: 5%;
 }
 
 .logo {
@@ -51,11 +57,13 @@ body {
   justify-content: center;
   align-items: center;
   color: #000;
+  gap: 5px;
+  cursor: pointer;
 }
 
 .logo-small {
-  font-size: 15px;
-  color: #588bae;
+  font-size: 18px;
+  color: #a7727d;
   text-decoration: dotted;
 }
 
@@ -68,6 +76,14 @@ body {
   width: 50px;
 }
 
+.nav-link {
+  font-weight: 400;
+  font-size: 17px;
+  cursor: pointer;
+}
+
+/* -------------------------------NavBar CSS Section Ends Here------------------------------ */
+
 .cards {
   display: flex;
   flex-wrap: wrap;
@@ -78,23 +94,33 @@ body {
 }
 
 .card {
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
   text-align: center;
-  box-shadow: var(--Box-shadow-outside);
-  background-color: #fbf0d7;
+  box-shadow: var(--Box-shadow-outside-dark);
+  background-color: #f8ead8;
   padding: 10px;
-  height: 250px;
+  height: 500px;
   width: 30%;
+}
 
+.img-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 300px;
+  width: 100%;
 }
 
 .image-api {
-  height: 100px;
-  width: 50%;
+  height: 300px;
+  width: 60%;
 }
 
 .popup-img {
-  height: 200px;
+  height: 400px;
   width: 50%;
 }
 
@@ -102,12 +128,15 @@ body {
   color: #7632fe;
 }
 
+.like-btn {
+  margin-top: 0.5rem;
+}
+
 .likes {
   margin-top: 0.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-right: 1.5rem;
 }
 
 .comment {
@@ -120,7 +149,6 @@ body {
 .button {
   padding: 0.8rem;
   border: none;
-  background-color: rgb(100, 86, 86);
   cursor: pointer;
   margin-top: 20px;
   box-shadow: 5px 7px 5px rgba(0, 0, 0, 1);
@@ -132,6 +160,7 @@ body {
   display: flex;
   justify-content: center;
   width: 100%;
+  transition: 0.5s ease;
 }
 
 .modal {
@@ -152,7 +181,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: white;
+  background-color: #f8ead8;
   border: 2px solid black;
   border-radius: 20px;
   width: 800px;
@@ -172,7 +201,7 @@ body {
   padding: 5px 10px;
   cursor: pointer;
   border-radius: 8px;
-  border-color: aqua;
+  border-color: #a7727d;
 }
 
 .art-details ul {
@@ -205,15 +234,22 @@ body {
 
 #name {
   width: 80%;
-  padding: .5em .5em;
+  border: 3px solid #a7727d;
+  padding: 0.5em 0.5em;
 }
 
 #insights {
-  padding: .5em .5em 5em .5em;
+  border: 3px solid #a7727d;
+  padding: 0.5em 0.5em 5em 0.5em;
 }
 
 #cmd-btn {
   width: 80%;
+  height: 40px;
+  font-size: 20px;
+  border: 3px solid #a7727d;
+  background-color: #f9f5e7;
+  border-radius: 10px;
 }
 
 #overlay {
@@ -223,16 +259,17 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, .5);
+  background-color: rgba(0, 0, 0, 0.8);
   transition: 200ms ease-in-out;
   pointer-events: none;
+  border-radius: 10%;
+  border: 5px solid #f9f5e7;
 }
 
 #overlay.active {
   opacity: 1;
   pointer-events: all;
 }
-
 
 footer {
   line-height: 50px;
@@ -242,8 +279,8 @@ footer {
   border: 3px solid black;
   width: 100%;
   padding: 0 30px;
+  background-color: #f8ead8;
 }
-
 
 /* ---------------------------------------------- */
 

@@ -1,12 +1,13 @@
-import "./style.css";
-import FetchCards from "./modules/listCards.js";
-import postComment from "./modules/postCmds";
+import './style.css';
+import FetchCards from './modules/listCards.js';
+import postComment from './modules/postCmds.js';
+
 postComment();
 
-const callAPI = new FetchCards();
+const callcards = new FetchCards();
 
 async function initialize() {
-  await callAPI.GetArtworks();
+  await callcards.GetArtworks();
   // Call any other functions that rely on the API data here
 }
 
