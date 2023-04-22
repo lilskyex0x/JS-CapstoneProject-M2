@@ -2,7 +2,7 @@ import DisplayCards from "./listCards.js";
 
 export default class Api {
   constructor() {
-    this.artworksList = 'https://api.artic.edu/api/v1/artworks?';
+    this.artworksList = 'https://api.artic.edu/api/v1/artworks?page=2';
   }
 
   GetArtworks = async () => {
